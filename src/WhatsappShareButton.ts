@@ -9,9 +9,7 @@ function isMobileOrTablet() {
 function whatsappLink(url: string, { title, separator }: { title?: string; separator?: string }) {
   assert(url, 'whatsapp.url');
   return (
-    'https://' +
-    (isMobileOrTablet() ? 'api' : 'web') +
-    '.whatsapp.com/send' +
+    'https://api.whatsapp.com/send' +
     objectToGetParams({
       text: title ? title + separator + url : url,
     })
